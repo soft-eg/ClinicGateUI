@@ -17,7 +17,7 @@ export class PatientsComponent implements OnInit {
 
   patientlist:Patient[];
   dataavailbale: Boolean = false;  
-  tempemp: Patient;
+  tempPatient: Patient;
  
   
   constructor(private dataservice:PatientDataService ,public datepipe: DatePipe) { }
@@ -47,9 +47,9 @@ LoadData() {
 
 deleteconfirmation(id: string) {
   if (confirm("Are you sure you want to delete this ?")) {
-    this.tempemp = new Patient();
-    this.tempemp.Id = id;
-    this.dataservice.DeletePatient(this.tempemp).subscribe(res => {
+    this.tempPatient = new Patient();
+    this.tempPatient.Id = id;
+    this.dataservice.DeletePatient(this.tempPatient).subscribe(res => {
       alert("Deleted successfully !!!");
       this.LoadData();
     })
