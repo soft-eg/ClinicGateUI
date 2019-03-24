@@ -3,7 +3,7 @@ import { NgForm   } from '@angular/forms';
 import { Patient } from 'src/app/Models/Patient';  
 import {PatientDataService} from '../DataServices/PatientDataService' 
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { DatePipe } from '@angular/common';
+ 
 
 @Component({
   selector: 'app-patient-add',
@@ -17,7 +17,7 @@ export class PatientAddComponent implements OnInit {
   @ViewChild('closeBtn') cb: ElementRef;  
   dpConfig: Partial<BsDatepickerConfig> ;
 
-constructor(private dataservice:PatientDataService,public datepipe: DatePipe) {
+constructor(private dataservice:PatientDataService) {
   this.dpConfig=Object.assign({},{ containerClass :'theme-dark-blue',showWeeksNumbers:false , dataInputFormata:'MM/dd/yyyy'} ) ;
 }
 
@@ -31,8 +31,7 @@ constructor(private dataservice:PatientDataService,public datepipe: DatePipe) {
       alert('please check required field');
       return ;
   }else{
-
-     
+    
     this.PatientEntity=new  Patient();
     this.PatientEntity.PasNumber=regForm.value.pasNumber;  
     this.PatientEntity.Forenames=regForm.value.forename;  
