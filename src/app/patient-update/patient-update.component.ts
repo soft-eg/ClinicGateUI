@@ -3,7 +3,7 @@ import {PatientDataService} from '../DataServices/PatientDataService'
 import { NgForm } from '@angular/forms';  
 import { Patient } from 'src/app/Models/Patient';  
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { DatePipe } from '@angular/common';
+ 
 
 @Component({
   selector: 'app-patient-update',
@@ -12,7 +12,7 @@ import { DatePipe } from '@angular/common';
 })
 export class PatientUpdateComponent implements OnInit {
   dpConfig: Partial<BsDatepickerConfig> ;
-  constructor(private dataservice:PatientDataService,public datepipe: DatePipe) {  
+  constructor(private dataservice:PatientDataService) {  
     this.dpConfig=Object.assign({},{ containerClass :'theme-dark-blue',showWeeksNumbers:false , dataInputFormata:'DD/MM/YYYY'} ) ;
 
   }  
