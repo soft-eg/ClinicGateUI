@@ -1,0 +1,97 @@
+<div class="container" style="border:thin">  
+  <form #patientadd='ngForm' (ngSubmit)="Register(patientadd)" class="form-horizontal"   
+ 
+  >   
+ 
+    <div class="form-group" >  
+                <label  for="myPasNumber" >Pass Number</label>  
+                 <div >  
+                  <input type="text"  class="form-control"  
+                   id="myPasNumber"  
+                   name="pasNumber"  required [(ngModel)]='objemp.pasNumber'  #PasNumber="ngModel"
+                
+                   > 
+                   <span style="color:red"  *ngIf="PasNumber.touched && !PasNumber.valid"  
+                   
+                   > Required</span>  
+                </div>   
+
+              
+              </div>  
+ 
+
+   
+              <div class="form-group" >  
+                  <label  for="myForename" >Forename</label>  
+                   <div >  
+                    <input type="text" class="form-control"  
+                     id="myForename" 
+                     name="forename"  required [(ngModel)]='objemp.forename'  #ForeName="ngModel">  
+                     <span style="color:red"  *ngIf="ForeName.touched && !ForeName.valid"> Required</span> 
+                  </div>   
+                </div>  
+
+
+
+                
+                <div class="form-group" >  
+                    <label  for="mySurname" >Surname</label>  
+                     <div >  
+                      <input type="text" class="form-control"  
+                       id="mySurname"  
+                       name="surname"  required [(ngModel)]='objemp.surname'  #SureName="ngModel">  
+                       <span style="color:red"  *ngIf="SureName.touched && !SureName.valid"> Required</span> 
+                    </div>   
+                  </div> 
+ 
+
+
+                  <div class="form-group" >  
+                      <label for="SexCode">Gender</label>  
+                      
+                        <select class="form-control" id="sexcode" name="SexCode" 
+                         required [(ngModel)]='objemp.SexCode'  #sexcode="ngModel">  
+
+                        
+                         <option value="0" selected disabled>Please Select</option>  
+    <option value="1">Male</option>  
+    <option value="2">Female</option> 
+                      
+                       
+                      </select>  
+                      <span class="help-bpx" *ngIf="sexcode.touched && !sexcode.valid ">required</span>  
+                    </div>  
+
+                    
+              
+                    <div class="form-group" >  
+                        <label  for="DateOfBirth" >Date Of Birth</label>  
+                         <div >  
+                            <input type="text" class="theme-blue" id="DateOfBirth" name="DateOfBirth"  placment="right"
+                            [bsConfig]="dpConfig"
+                           
+                            class="form-control"
+                            [(ngModel)]='objemp.DateOfBirth'
+                            bsDatepicker>
+                           
+                            
+
+                           
+                        </div>   
+        
+                        
+
+
+                      </div>
+
+
+              
+               <div class="form-group">          
+                <div class="col-sm-offset-2 col-sm-10">  
+                  <button  id="btnsubmit"  type="submit" class="btn btn-primary">Add</button>  
+  
+                </div>  
+              </div>  
+            </form>  
+          </div>  
+          <button style="display:none" type="button" #closeBtn  class="btn btn-default"   data-dismiss="modal">Close</button>  
