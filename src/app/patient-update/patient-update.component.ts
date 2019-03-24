@@ -39,7 +39,7 @@ export class PatientUpdateComponent implements OnInit {
     this.dataservice.EditPatient(this.objPatient).subscribe(res=>  
       {  
       alert("Patient updated successfully");  
-      this.updateEvent.emit("ccc");  
+      this.updateEvent.emit();  
       this.cb.nativeElement.click();  
        
       },  

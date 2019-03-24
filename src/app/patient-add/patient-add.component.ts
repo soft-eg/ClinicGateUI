@@ -47,7 +47,7 @@ constructor(private dataservice:PatientDataService,public datepipe: DatePipe) {
   )  
 }   
   TakeHome(regForm:NgForm){  
-     this.addEvent.emit("ccc");  
+     this.addEvent.emit();  
     this.cb.nativeElement.click();  
     regForm.reset();
   }
