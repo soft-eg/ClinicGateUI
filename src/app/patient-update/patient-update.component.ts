@@ -16,7 +16,7 @@ export class PatientUpdateComponent implements OnInit {
     this.dpConfig=Object.assign({},{ containerClass :'theme-dark-blue',showWeeksNumbers:false , dataInputFormata:'DD/MM/YYYY'} ) ;
 
   }  
-  @Output() nameEvent = new EventEmitter<string>();  
+  @Output() updateEvent = new EventEmitter<string>();  
   @ViewChild('closeBtn') cb: ElementRef;  
   ngOnInit() {  
   }  
@@ -39,7 +39,7 @@ export class PatientUpdateComponent implements OnInit {
     this.dataservice.EditPatient(this.objemp).subscribe(res=>  
       {  
       alert("Patient updated successfully");  
-      this.nameEvent.emit("ccc");  
+      this.updateEvent.emit("ccc");  
       this.cb.nativeElement.click();  
        
       },  

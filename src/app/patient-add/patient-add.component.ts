@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./patient-add.component.css']
 })
 export class PatientAddComponent implements OnInit {
-  @Output() nameEvent = new EventEmitter<string>();  
+  @Output() addEvent = new EventEmitter<string>();  
   objtempemp:Patient;  
   @Input() objemp :Patient=new Patient();
   @ViewChild('closeBtn') cb: ElementRef;  
@@ -47,7 +47,7 @@ constructor(private dataservice:PatientDataService,public datepipe: DatePipe) {
   )  
 }   
   TakeHome(regForm:NgForm){  
-     this.nameEvent.emit("ccc");  
+     this.addEvent.emit("ccc");  
     this.cb.nativeElement.click();  
     regForm.reset();
   }
