@@ -7,7 +7,7 @@
              <div >  
               <input type="text" class="form-control"  
                id="myPasNumber" placeholder="Enter Pass Number"  
-               name="pasNumber"  required [(ngModel)]='objemp.PasNumber'  #PasNumber="ngModel">  
+               name="pasNumber"  required [(ngModel)]='objPatient.PasNumber'  #PasNumber="ngModel">  
                <span style="color:red"   *ngIf="PasNumber.touched && !PasNumber.valid">Required</span>  
               
             </div>   
@@ -18,7 +18,7 @@
                <div >  
                 <input type="text" class="form-control"  
                  id="myForename" placeholder="Forename"  
-                 name="forename"  required [(ngModel)]='objemp.Forenames'  #ForeName="ngModel">  
+                 name="forename"  required [(ngModel)]='objPatient.Forenames'  #ForeName="ngModel">  
                  <span style="color:red"   *ngIf="ForeName.touched && !ForeName.valid">Required</span> 
               </div>   
             </div>  
@@ -28,7 +28,7 @@
                  <div >  
                   <input type="text" class="form-control"  
                    id="mySurname" placeholder="Enter Surname"  
-                   name="surname"  required [(ngModel)]='objemp.Surname'  #SureName="ngModel">  
+                   name="surname"  required [(ngModel)]='objPatient.Surname'  #SureName="ngModel">  
                    <span style="color:red"   *ngIf="SureName.touched && !SureName.valid">Required</span>
                 </div>   
               </div> 
@@ -38,7 +38,7 @@
                   <label for="sexcode">Gender</label>  
               
  
-<select name="SexCode"  id="sexcode" class="form-control" sexcode required [(ngModel)]='objemp.SexCode' #sexcode="ngModel">  
+<select name="SexCode"  id="sexcode" class="form-control" sexcode required [(ngModel)]='objPatient.SexCode' #sexcode="ngModel">  
     <option value="0" selected disabled>Please Select</option>  
     <option value="1">Male</option>  
     <option value="2">Female</option>  
@@ -58,7 +58,7 @@
           [bsConfig]="dpConfig"
          
           class="form-control"
-          [(ngModel)]='objemp.DateOfBirth'
+          [(ngModel)]='objPatient.DateOfBirth'
           bsDatepicker>
          
           

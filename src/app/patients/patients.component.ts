@@ -63,11 +63,11 @@ deleteconfirmation(id: string) {
 
 loadAddnew() {
  
-  this.addcomponent.objemp.PasNumber = ""
-  this.addcomponent.objemp.Forenames = ""
-  this.addcomponent.objemp.Surname = ""
-  this.addcomponent.objemp.SexCode = 0
-  this.addcomponent.objemp.DateOfBirth = ""
+  this.addcomponent.objPatient.PasNumber = ""
+  this.addcomponent.objPatient.Forenames = ""
+  this.addcomponent.objPatient.Surname = ""
+  this.addcomponent.objPatient.SexCode = 0
+  this.addcomponent.objPatient.DateOfBirth = ""
  
 }
 
@@ -77,12 +77,12 @@ loadAddnew() {
 loadnewForm(id: string, PasNumber: string, Forenames: string, Surname: string, sexCode: number,DateOfBirth:string) {
 
  
-  this.editcomponent.objemp.PasNumber = PasNumber
-  this.editcomponent.objemp.Forenames = Forenames
-  this.editcomponent.objemp.Surname = Surname
-  this.editcomponent.objemp.SexCode = sexCode
-  this.editcomponent.objemp.DateOfBirth = this.datepipe.transform(DateOfBirth ,'MM/dd/yyyy');  
-  this.editcomponent.objemp.Id = id
+  this.editcomponent.objPatient.PasNumber = PasNumber
+  this.editcomponent.objPatient.Forenames = Forenames
+  this.editcomponent.objPatient.Surname = Surname
+  this.editcomponent.objPatient.SexCode = sexCode
+  this.editcomponent.objPatient.DateOfBirth = this.datepipe.transform(DateOfBirth ,'MM/dd/yyyy');  
+  this.editcomponent.objPatient.Id = id
  
 
 }

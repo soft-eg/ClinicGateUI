@@ -12,8 +12,8 @@ import { DatePipe } from '@angular/common';
 })
 export class PatientAddComponent implements OnInit {
   @Output() addEvent = new EventEmitter<string>();  
-  objtempemp:Patient;  
-  @Input() objemp :Patient=new Patient();
+  PatientEntity:Patient;  
+  @Input() objPatient :Patient=new Patient();
   @ViewChild('closeBtn') cb: ElementRef;  
   dpConfig: Partial<BsDatepickerConfig> ;
 
@@ -33,15 +33,15 @@ constructor(private dataservice:PatientDataService,public datepipe: DatePipe) {
   }else{
 
      
-    this.objtempemp=new  Patient();
-    this.objtempemp.PasNumber=regForm.value.pasNumber;  
-    this.objtempemp.Forenames=regForm.value.forename;  
-    this.objtempemp.Surname=regForm.value.surname;  
-    this.objtempemp.SexCode=regForm.value.SexCode;  
-    this.objtempemp.DateOfBirth=regForm.value.DateOfBirth;
+    this.PatientEntity=new  Patient();
+    this.PatientEntity.PasNumber=regForm.value.pasNumber;  
+    this.PatientEntity.Forenames=regForm.value.forename;  
+    this.PatientEntity.Surname=regForm.value.surname;  
+    this.PatientEntity.SexCode=regForm.value.SexCode;  
+    this.PatientEntity.DateOfBirth=regForm.value.DateOfBirth;
    }
 
-  this.dataservice.AddPatient(this.objtempemp).subscribe(res=>{  
+  this.dataservice.AddPatient(this.PatientEntity).subscribe(res=>{  
   this.TakeHome(regForm);  
 }  
   )  

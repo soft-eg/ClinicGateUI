@@ -34,7 +34,7 @@ return this.http.post<Patient>(ROOT_URL+'/patients',body,{headers})
 
 EditPatient(entity:Patient)
 {
-  debugger;
+ 
   
  const params = new HttpParams().set('Id', entity.Id);
   const headers = new HttpHeaders().set('content-type', 'application/json');

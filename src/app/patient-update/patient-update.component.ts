@@ -24,19 +24,19 @@ export class PatientUpdateComponent implements OnInit {
 
   @ViewChild('regForm') myForm: NgForm;  
   @Input() isReset: boolean = false;  
-  objtempemp:Patient;  
-  @Input() objemp :Patient=new Patient();  
+  PatientEntity:Patient;  
+  @Input() objPatient :Patient=new Patient();  
   EditPatient(regForm:NgForm)  
   {  
 
  
-  if (!(regForm.value.pasNumber) || !(regForm.value.forename)|| !(regForm.value.surname) || (this.objemp.SexCode==0) || !(this.objemp.DateOfBirth)) {
+  if (!(regForm.value.pasNumber) || !(regForm.value.forename)|| !(regForm.value.surname) || (this.objPatient.SexCode==0) || !(this.objPatient.DateOfBirth)) {
     alert('please check required field');
     return ;
 } 
 
 
-    this.dataservice.EditPatient(this.objemp).subscribe(res=>  
+    this.dataservice.EditPatient(this.objPatient).subscribe(res=>  
       {  
       alert("Patient updated successfully");  
       this.updateEvent.emit("ccc");  
